@@ -1,35 +1,37 @@
 import React from 'react'
 import axios from 'axios'
-import { useState} from 'react'
+import { useState , useRef} from 'react'
 import { useEffect } from 'react'
 
 const App = () => {
-    const [weather, setweather] = useState(null)
-    // const inputVal = useRef()
-    // const weat = inputVal.current
+  const val = useRef();
+  const [Weather, setWeather] = useState([])
+  const [City, setCity] = useState('')
 
-    useEffect(()=>{
-        axios(`https://api.weatherapi.com/v1/current.json?key=e3e98122324b454b92f44333241406&q=${weat}&aqi=no`)
-          .then((res)=>{
-            console.log(res.data.location.country);
-            setweather(res.data);
-          })
-          .catch((err)=>{
-            console.log(err);
-          })
+  const searchBtn = (e)=>{
+    e.preventDefault()
+    setCity (val.current.value)
 
-
-
-          },[])
+  } 
+        useEffect(()=>{
+          axios(`https://api.weatherapi.com/v1/current.json?key=470dc57fa01f47e3823105240240509&q=${City}&aqi=no`)
+          .then(response => {
+            console.log(response.data);
+            })
+            .catch(error => {
+              console.error(error);
+              });
+        },[])
         
+
 
   return (
     <>
-    <div>
-        <h1>Weather.App</h1>
-        <input id='weat' type="text" name="weather" placeholder='Enter City'/>
-        <button type="button">Search</button>
-    </div>
+    <h1>Weather.Net</h1>
+    <form>
+      <input ref={val} type="text" name="city" placeholder="Enter City"/>
+      <button type="submit">Search</button>
+      </form>
     </>
   )
 
