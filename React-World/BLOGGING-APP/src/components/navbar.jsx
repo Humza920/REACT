@@ -1,6 +1,6 @@
 import React from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth, db } from "../config/Firebase/firebaseConfig";
+import { auth, db } from "../firebase/config";
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -65,9 +65,9 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar bg-primary">
+      <div className="navbar bg-primary p-4">
         <div className="flex-1">
-          <Link to="/" className="btn btn-ghost text-xl text-white">
+          <Link to="/" className="btn btn-ghost text-4xl text-white">
             Personal Blogging App
           </Link>
         </div>
@@ -90,13 +90,15 @@ function Navbar() {
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
                 >
                   <li>
-                    <Link to={"singleblog"} className="justify-between">
+                    <Link to={"solo"} className="justify-between">
                       Profile
                       <span className="badge">New</span>
                     </Link>
                   </li>
                   <li>
-                    <a>Dashboard</a>
+                    <Link to={"dashboared"}>
+                      <a>Dashboard</a>
+                    </Link>
                   </li>
                   <li>
                     <p onClick={logoutBtn}>Logout</p>

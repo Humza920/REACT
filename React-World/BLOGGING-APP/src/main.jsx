@@ -7,7 +7,7 @@ import Login from './Screens/Login/Login.jsx'
 import Signup from './Screens/Signup/signup.jsx'
 import Profile from './Screens/Profile/Profile.jsx'
 import ProtectRoutes from './ProtectRoutes.jsx'
-import Dashboard from './Screens/Dashboard/Dashboard.jsx'
+import Dashboard from './Screens/Dashboared/dashboared.jsx'
 import SoloBlog from './Screens/Soloblog/solo.jsx'
 
 

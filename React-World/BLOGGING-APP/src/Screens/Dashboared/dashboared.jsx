@@ -4,7 +4,7 @@ import Cards from "../../components/Cards";
 import { addDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { db, auth } from "../../firebase/config.js";
 import { onAuthStateChanged } from "firebase/auth";
-import Popup from "../../components/Popup.jsx";
+import Popup from "../../components/Popup";
 
 function Dashboard() {
   const {
@@ -81,11 +81,6 @@ function Dashboard() {
       }
     });
   };
-
-  // const editBtn = () => {
-  //   console.log('edit button clicked!');
-
-  // }
 
   const deleteBtn = async (index) => {
     console.log("delete button clicked!", index);

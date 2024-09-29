@@ -1,6 +1,6 @@
 import React from "react";
 
-function SucessAlert() {
+function Popup() {
   return (
     <div role="alert" className="alert alert-success">
       <svg
@@ -21,4 +21,4 @@ function SucessAlert() {
   );
 }
 
-export default SucessAlert;
+export default Popup;

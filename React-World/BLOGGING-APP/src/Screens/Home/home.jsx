@@ -42,8 +42,8 @@ function Home() {
 
   return (
     <>
-      <div className="mt-4">
-        <h1 className="text-3xl font-bold text-center">All Blogs</h1>
+      <div className="mt-6">
+        <h1 className="text-3xl font-bold text-start m-4">Blogs</h1>
       </div>
 
       <div className="mt-5">
