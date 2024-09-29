@@ -5,7 +5,7 @@ import Layout from './Layout.jsx'
 import Home from './Screens/Home/home.jsx'
 import Login from './Screens/Login/login.jsx'
 import Signup from './Screens/Signup/signup.jsx'
-import Profile from './Pages/Profile/profile.jsx'
+import Profile from './Screens/Profile/profile.jsx'
 import ProtectRoutes from './ProtectRoutes.jsx'
 import Dashboared from './Screens/Dashboared/dashboared.jsx'
 
