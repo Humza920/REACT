@@ -120,7 +120,7 @@ querySnapshot.forEach((doc) => {
       <div className="mt-4">
         <p className="font-sans">
           Don't have an account?
-          <Link to={"/register"} className="font-bold cursor-pointer">
+          <Link to={"/signup"} className="font-bold cursor-pointer">
             Register
           </Link>
         </p>
