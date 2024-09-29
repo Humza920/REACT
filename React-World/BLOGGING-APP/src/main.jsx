@@ -1,13 +1,15 @@
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./Layout.jsx";
-import Home from "./Screens/Home/home.jsx";
-import Login from "./Screens/Login/login.jsx";
-import Signup from "./Screens/Signup/signup.jsx";
-import Profile from "./Screens/Profile/profile.jsx";
-import ProtectRoutes from "./ProtectRoutes.jsx";
-import Dashboared from "./Screens/Dashboared/dashboared.jsx";
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Layout from './Layout.jsx'
+import Home from './Screens/Home/Home.jsx'
+import Login from './Screens/Login/Login.jsx'
+import Signup from './Screens/Signup/signup.jsx'
+import Profile from './Screens/Profile/Profile.jsx'
+import ProtectRoutes from './ProtectRoutes.jsx'
+import Dashboard from './Screens/Dashboard/Dashboard.jsx'
+import SoloBlog from './Screens/Soloblog/solo.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -20,24 +22,30 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: <Login />
       },
       {
         path: "/signup",
-        element: <Signup />,
+        element: <Signup />
       },
       {
         path: "/profile",
-        element: <ProtectRoutes component={<Profile />} />,
+        element: <ProtectRoutes component={<Profile />} />
       },
       {
         path: "/dashboared",
-        element: <ProtectRoutes component={<Dashboared />} />,
+        element: <ProtectRoutes component={<Dashboard />} />
       },
+      {
+        path:'/solo',
+        element:<SoloBlog/>
+      }
+     
     ],
   },
 ]);
 
-createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router}></RouterProvider>
-);
+createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router}>
+  </RouterProvider>
+)

@@ -6,8 +6,12 @@ function Cards({
   username,
   date,
   description,
-  button1,
-  button2,
+  onButtonClick,
+  editBtn,
+  deleteBtn,
+  button,
+  onEditBtn,
+  onDeleteBtn,
 }) {
   return (
     <>
@@ -36,8 +40,15 @@ function Cards({
           <p>{description}</p>
         </div>
         <div className="mt-5">
-          <button className="text-primary">{button1}</button>
-          <button className="pl-6 text-primary">{button2}</button>
+          <button onClick={onButtonClick} className="text-primary">
+            {button}
+          </button>
+          <button onClick={onEditBtn} className="pl-6 text-primary">
+            {editBtn}
+          </button>
+          <button onClick={onDeleteBtn} className="pl-6 text-primary">
+            {deleteBtn}
+          </button>
         </div>
       </div>
     </>

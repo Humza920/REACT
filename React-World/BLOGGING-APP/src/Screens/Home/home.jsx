@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import Cards from "../../components/Cards";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config.js";
+import { json, useNavigate } from "react-router-dom";
 
 function Home() {
   const [homeCardData, setHomeCardData] = useState([]);
+
+  //navigate
+
+  const navigate = useNavigate();
 
   //get data from the firebase
 
@@ -21,6 +26,20 @@ function Home() {
     getData();
   }, []);
 
+  const singleBlog = (index) => {
+    console.log("single blog clicked", index);
+    console.log(homeCardData[index]);
+
+    let storeSingleBlogToLocalStore = [];
+
+    storeSingleBlogToLocalStore.push(homeCardData[index]);
+    localStorage.setItem(
+      "userSingleBlog",
+      JSON.stringify(storeSingleBlogToLocalStore)
+    );
+    //  navigate("/singleBlog");
+  };
+
   return (
     <>
       <div className="mt-4">
@@ -35,9 +54,11 @@ function Home() {
                 <Cards
                   title={item.title}
                   description={item.description}
-                  date={"September, 12,2024"}
-                  username={"Ashar khan"}
-                  button1={"See All From This User"}
+                  date={item.date}
+                  username={item.userName}
+                  image={item.image}
+                  onButtonClick={() => singleBlog(index)}
+                  button={"All From This User"}
                 />
               </div>
             );

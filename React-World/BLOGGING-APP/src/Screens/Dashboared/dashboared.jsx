@@ -4,6 +4,7 @@ import Cards from "../../components/Cards";
 import { addDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { db, auth } from "../../firebase/config.js";
 import { onAuthStateChanged } from "firebase/auth";
+import Popup from "../../components/Popup.jsx";
 
 function Dashboard() {
   const {
@@ -13,60 +14,83 @@ function Dashboard() {
     formState: { errors },
   } = useForm();
 
-  const [cardData, setCardData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchCards = async () => {
-      const q = query(collection(db, "userblogs"));
-      const querySnapshot = await getDocs(q);
-      const cards = [];
-      querySnapshot.forEach((doc) => {
-        cards.push(doc.data());
-      });
-      setCardData(cards);
-      setLoading(false);
-    };
-    fetchCards();
-  }, []);
-
   const currentDate = new Date();
   const month = currentDate.toLocaleString("default", { month: "long" });
   const date = currentDate.getDate();
   const year = currentDate.getFullYear();
 
-  const userBlog = async (data) => {
+  const blogDate = `${month} , ${date}, ${year}`;
+
+  const [cardData, setCardData] = useState([]);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const uid = user.uid;
+        const q = query(collection(db, "userblogs"), where("uid", "==", uid));
+        const querySnapshot = await getDocs(q);
+        const newData = querySnapshot.docs.map((doc) => doc.data());
+        setCardData(newData);
+      }
+    });
+  }, []);
+
+  const userBlog = (data) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
-        const getUserImageAndName = async () => {
+
+        const getUserImageName = async () => {
           const q = query(collection(db, "user"), where("uid", "==", uid));
+
           const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc) => {
-            const storeBlogToDb = async () => {
+            const setUserBlogInFirestore = async () => {
               const docRef = await addDoc(collection(db, "userblogs"), {
-                userName: doc.data().userName,
-                image: doc.data().profile,
                 title: data.title,
                 description: data.description,
-                date: date,
+                image: doc.data().profile,
+                userName: doc.data().userName,
+                date: blogDate,
+                uid: uid,
               });
               console.log("Document written with ID: ", docRef.id);
-              const newCard = {
-                userName: doc.data().userName,
-                image: doc.data().profile,
-                title: data.title,
-                description: data.description,
-                date: date,
-              };
-              setCardData([...cardData, newCard]);
+
+              <Popup />;
             };
-            storeBlogToDb();
+
+            setUserBlogInFirestore();
+
+            const getData = async () => {
+              const q = query(
+                collection(db, "userblogs"),
+                where("uid", "==", uid)
+              );
+
+              const querySnapshot = await getDocs(q);
+              const newData = querySnapshot.docs.map((doc) => doc.data());
+              setCardData(newData);
+              console.log(cardData);
+            };
+
+            getData();
           });
         };
-        getUserImageAndName();
+
+        getUserImageName();
       }
     });
+  };
+
+  // const editBtn = () => {
+  //   console.log('edit button clicked!');
+
+  // }
+
+  const deleteBtn = async (index) => {
+    console.log("delete button clicked!", index);
+
+    console.log(cardData[index]);
   };
 
   return (
@@ -107,17 +131,20 @@ function Dashboard() {
 
       <h1 className="text-2xl text-center font-bold mt-[7rem]">My Blogs</h1>
 
-      {loading ? (
-        <h1 className="text-center">Loading...</h1>
-      ) : cardData.length !== 0 ? (
-        cardData.map((item) => {
+      {cardData.length != 0 ? (
+        cardData.map((item, index) => {
           return (
-            <div className="mt-5">
+            <div key={index} className="mt-5">
               <Cards
                 title={item.title}
                 description={item.description}
                 image={item.image}
                 username={item.userName}
+                date={item.date}
+                editBtn={"Edit"}
+                deleteBtn={"Delete"}
+                // onEditBtn={editBtn}
+                onDeleteBtn={() => deleteBtn(index)}
               />
             </div>
           );
