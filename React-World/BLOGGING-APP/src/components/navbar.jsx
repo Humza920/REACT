@@ -1,16 +1,12 @@
-import React from 'react'
-import {onAuthStateChanged } from "firebase/auth";
-import { auth , db } from '../firebase/config.js';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import {signOut } from "firebase/auth";
+import React from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, db } from "../firebase/config.js";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-
-
 function Navbar() {
-
-
   //Navigate
 
   const navigate = useNavigate();
@@ -19,48 +15,36 @@ function Navbar() {
 
   //state for store userdata like profile
 
-  const [userData , setUserData] = useState(null)
+  const [userData, setUserData] = useState(null);
 
-
-
- //get data from firebase by uid using query
+  //get data from firebase by uid using query
 
   const getData = async (user) => {
     const q = query(collection(db, "user"), where("uid", "==", user.uid));
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-
       const profile = doc.data().profile;
 
       //set the user profile in userdata
 
-      setUserData(profile)
-
-      
+      setUserData(profile);
     });
   };
 
   //check if user login or not by firebase function means usestate
 
-  
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const uid = user.uid;
-        setisloggedIn(true);
-        getData(user)
-        
-        
-        
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      setisloggedIn(true);
+      getData(user);
 
-        return;
-      }
-    });
-  
+      return;
+    }
+  });
 
-  
-
-  //login button functionality which navigate user on login 
+  //login button functionality which navigate user on login
 
   const loginButton = () => {
     navigate("/login");
@@ -84,7 +68,7 @@ function Navbar() {
       <div className="navbar bg-primary">
         <div className="flex-1">
           <Link className="btn btn-ghost text-xl text-white">
-            Personal Blogging App
+            <b>Personal Blogging App</b>
           </Link>
         </div>
 
@@ -112,10 +96,7 @@ function Navbar() {
                     </a>
                   </li>
                   <li>
-                    <a>
-                      Dashboard
-                      
-                    </a>
+                    <a>Dashboard</a>
                   </li>
                   <li>
                     <p onClick={logoutBtn}>Logout</p>
@@ -134,4 +115,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;

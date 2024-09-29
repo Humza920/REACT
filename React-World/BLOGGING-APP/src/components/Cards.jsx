@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
 
-function Cards({image , title , username , date , description , button1 , button2}) {
-
+function Cards({
+  image,
+  title,
+  username,
+  date,
+  description,
+  button1,
+  button2,
+}) {
   return (
     <>
       <div className="max-w-2xl mx-auto p-6 border border-gray-300 shadow-lg rounded-lg">
@@ -20,17 +27,13 @@ function Cards({image , title , username , date , description , button1 , button
             {/* Username and Date */}
             <div className="text-sm text-gray-600">
               <span className="font-medium">{username}</span> •{" "}
-              <span>
-               {date}
-              </span>
+              <span>{date}</span>
             </div>
           </div>
         </div>
         {/* Description */}
         <div className="mt-4">
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
         </div>
         <div className="mt-5">
           <button className="text-primary">{button1}</button>
@@ -41,4 +44,4 @@ function Cards({image , title , username , date , description , button1 , button
   );
 }
 
-export default Cards
+export default Cards;

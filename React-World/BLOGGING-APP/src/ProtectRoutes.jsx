@@ -1,43 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { auth } from './firebase/config.js';
-import {onAuthStateChanged } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { auth } from "./firebase/config.js";
+import { onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
-function ProtectRoutes({component}) {
+function ProtectRoutes({ component }) {
+  let [isUser, setIsUser] = useState(false);
 
-    let [isUser , setIsUser] = useState(false);
+  //use Navigate
 
-    //use Navigate
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    onAuthStateChanged(
+      auth,
+      (user) => {
+        if (user) {
+          setIsUser(true);
 
-    useEffect(() => {
-          onAuthStateChanged(auth, (user) => {
-  if (user) {
+          return;
+        } else {
+          navigate("/login");
+        }
+      },
+      []
+    );
+  });
 
-    setIsUser(true)
-
-    return
-
-
-  } else {
-
-    navigate('/login')
-    
-  }
-    } , [])
-
-
-  
-})
-
-  
-
-  return (
-    <>
-    {setIsUser ? component : <h1>loading...</h1>}
-    </>
-  )
+  return <>{setIsUser ? component : <h1>loading...</h1>}</>;
 }
 
-export default ProtectRoutes
+export default ProtectRoutes;

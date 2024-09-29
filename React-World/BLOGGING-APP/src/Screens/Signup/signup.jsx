@@ -3,13 +3,11 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth , storage , db} from "../../firebase/config.js";
-import {  uploadBytes , ref , getDownloadURL } from "firebase/storage";
+import { auth, storage, db } from "../../firebase/config.js";
+import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 
 function Register() {
-
   //react hook form material for handing form fields
-
 
   const {
     register,
@@ -21,11 +19,6 @@ function Register() {
   //Navigate
 
   const navigate = useNavigate();
-
-
- 
-
-  
 
   //Register user to firebase
 
@@ -96,7 +89,7 @@ function Register() {
       .catch((error) => {
         const errorMessage = error.message;
 
-        alert(errorMessage)
+        alert(errorMessage);
       });
   };
 
@@ -173,7 +166,7 @@ function Register() {
         <input
           type="file"
           className="file-input file-input-bordered flex items-center w-[19rem] mt-4 sm:w-[25rem] md:w-[25rem] lg:w-[25rem]"
-          {...register('userProfile')}
+          {...register("userProfile")}
         />
 
         <div className="mt-3">

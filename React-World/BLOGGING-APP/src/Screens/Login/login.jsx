@@ -1,15 +1,11 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth , db } from '../../firebase/config.js';
+import { auth, db } from "../../firebase/config.js";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-
-
- 
 function Login() {
-
   const {
     register,
     handleSubmit,
@@ -22,8 +18,6 @@ function Login() {
   const navigate = useNavigate();
 
   const loginUserFromFirebase = (data) => {
-
-
     //login user from firebase
 
     signInWithEmailAndPassword(auth, data.email, data.password)
@@ -31,30 +25,23 @@ function Login() {
         const user = userCredential.user;
         console.log(user);
 
-      const getData = async () => {
-        const q = query(collection(db, "user"), where("uid", "==", user.uid));
+        const getData = async () => {
+          const q = query(collection(db, "user"), where("uid", "==", user.uid));
 
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-  console.log(doc.id, " => ", doc.data());
-  navigate('/')
-});
-      }
+          const querySnapshot = await getDocs(q);
+          querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+            navigate("/");
+          });
+        };
 
-      getData()
-
-
-
-
-        
+        getData();
       })
       .catch((error) => {
         const errorMessage = error.message;
-        alert(errorMessage)
+        alert(errorMessage);
       });
-    
   };
-  
 
   return (
     <div className="shadow-2xl p-[30px] flex justify-center flex-col items-center bg-white border-4 w-[21rem] sm:w-[35rem] md:w-[35rem] lg:w-[35rem] m-[auto] mt-[17vh] rounded-2xl">
@@ -129,4 +116,4 @@ querySnapshot.forEach((doc) => {
   );
 }
 
-export default Login
+export default Login;
