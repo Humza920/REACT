@@ -11,12 +11,18 @@ function Car() {
 }
 
 const variable1 =(
-  <a href="https://github.com/Humza920" target='blank'>Humza 920</a>
+<h1><a href="https://github.com/Humza920" target='blank'>Humza 920</a></h1>
 )
 
-createRoot(document.getElementById('root')).render(
+const reactElement = React.createElement(
+  "a",
+  {href: "https://github.com/Humza920", target: "blank"},
+  "Humza 920"
+) 
 
-  variable1
+createRoot(document.getElementById('root')).render(
+  // reactElement
+  // variable1
   // <App />
   // <Car />
 
