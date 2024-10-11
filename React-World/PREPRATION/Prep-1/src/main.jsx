@@ -1,6 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-// import App from './App.jsx'
+import App from './App.jsx'
 
 function Car() {
   return(
@@ -23,7 +23,7 @@ const reactElement = React.createElement(
 createRoot(document.getElementById('root')).render(
   // reactElement
   // variable1
-  // <App />
+  <App />
   // <Car />
 
 )
