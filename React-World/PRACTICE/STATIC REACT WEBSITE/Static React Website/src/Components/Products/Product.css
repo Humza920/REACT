@@ -1,0 +1,27 @@
+.products-section {
+  background-color: #f8f9fa;
+}
+
+.products-section h2 {
+  color: #1a1a1a;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.products-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 3rem 1rem;
+  }
+} 
