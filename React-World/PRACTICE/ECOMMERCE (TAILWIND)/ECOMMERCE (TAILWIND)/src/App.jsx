@@ -1,5 +1,7 @@
 import './App.css'
+import Carousal from './Components/Carousal'
 import Navbar from './Components/Navbar'
+import Top from './Components/Top'
 
 
 
@@ -8,7 +10,9 @@ import Navbar from './Components/Navbar'
 function App() {
   return (
 <>
+<Top />
 <Navbar />
+<Carousal />
 
 </>
   )

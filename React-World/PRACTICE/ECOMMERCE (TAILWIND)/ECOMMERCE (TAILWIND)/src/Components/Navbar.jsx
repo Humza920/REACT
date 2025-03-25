@@ -2,8 +2,8 @@ import React from "react";
 
 function Navbar() {
   return (
-<nav className="bg-gradient-to-r from-[#F1A208] to-[#E48A07] text-white flex items-center justify-center px-4 py-3 shadow-lg">
-  <div className="container mx-auto py-4 flex justify-between items-center">
+<nav className="bg-gradient-to-r from-[#F1A208] to-[#E48A07] text-white flex items-center justify-center py-3 shadow-lg">
+  <div className="container mx-auto py-3 flex justify-between items-center">
 
     <div>
       <h1 className="text-5xl font-extrabold tracking-wide">
