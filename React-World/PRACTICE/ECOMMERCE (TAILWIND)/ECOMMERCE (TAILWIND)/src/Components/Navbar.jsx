@@ -6,9 +6,9 @@ function Navbar() {
   <div className="container mx-auto py-3 flex justify-between items-center">
 
     <div>
-      <h1 className="text-5xl font-extrabold tracking-wide">
+      <a href="#"><h1 className="text-5xl font-extrabold tracking-wide">
         PETIO<span className="text-black">LOGY</span>
-      </h1>
+      </h1></a>
     </div>
 
     <div>
