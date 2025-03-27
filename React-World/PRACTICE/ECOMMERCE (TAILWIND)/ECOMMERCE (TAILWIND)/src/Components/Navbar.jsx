@@ -3,10 +3,10 @@ import React from "react";
 function Navbar() {
   return (
 <nav className="bg-gradient-to-r from-[#F1A208] to-[#E48A07] text-white flex items-center justify-center py-3 shadow-lg">
-  <div className="container mx-auto py-3 flex justify-between items-center">
+  <div className="w-full px-[200px] py-3 flex justify-between items-center">
 
     <div>
-      <a href="#"><h1 className="text-5xl font-extrabold tracking-wide">
+      <a href="#"><h1 className="text-6xl font-extrabold tracking-wide">
         PETIO<span className="text-black">LOGY</span>
       </h1></a>
     </div>
