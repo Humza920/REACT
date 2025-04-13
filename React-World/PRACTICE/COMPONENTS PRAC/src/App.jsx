@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-
+import './App.css'
 const App = () => {
 
   const [count , setcount] = useState(0)
@@ -19,9 +19,11 @@ function subtract () {
 
   return (
     <>
+    <div>
     <button onClick={add}>+</button>
     {count}
-    <button onClick={subtract}>+</button>
+    <button onClick={subtract}>-</button>
+    </div>
     </>
   )
 }
