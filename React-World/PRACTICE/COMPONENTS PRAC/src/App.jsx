@@ -1,46 +1,71 @@
-import React , {useState} from 'react'
-import './App.css'
+// import React , {useState} from 'react'
+// import './App.css'
+// const App = () => {
+
+//   const [count , setcount] = useState(0)
+
+// function add () {
+//   setcount(count + 1)
+// }
+
+// function subtract () {
+//   if (count > 0) {
+//     setcount(count - 1)
+//   }
+//   else{
+//     count
+//   }
+// }
+
+//   return (
+//     <>
+//     <div>
+//     <button onClick={add}>+</button>
+//     {count}
+//     <button onClick={subtract}>-</button>
+//     </div>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
+import React from 'react'
+
 const App = () => {
+  const [loader, setloader] = React.useState(null);
+  const [data, setdata] = React.useState(null);
 
-  const [count , setcount] = useState(0)
-
-function add () {
-  setcount(count + 1)
-}
-
-function subtract () {
-  if (count > 0) {
-    setcount(count - 1)
-  }
-  else{
-    count
-  }
-}
+  setTimeout( async() => {
+    let data = await fetch('https://fakestoreapi.com/products')
+    data = await data.json()
+  }, 5000);
 
   return (
-    <>
     <div>
-    <button onClick={add}>+</button>
-    {count}
-    <button onClick={subtract}>-</button>
+
+
     </div>
-    </>
   )
 }
 
-export default App
+export 
+
+
+const [count, setCount] = React.useState([]);App
 
 
 
 
 
 
-
-
-
-
-
-// YE WALI APPROACH FUNCTION KA KEY WORD BNA KAR HAI
+// YE 
+//
+const [count, setCount] = React.useState([]); 
+//  APPROACH FUNCTION KA KEY WORD BNA KAR HAI
 
 // function App() {
 //   return (
