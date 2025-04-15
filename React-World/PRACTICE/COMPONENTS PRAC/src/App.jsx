@@ -8,9 +8,9 @@
 //   setcount(count + 1)
 // }
 
-// function subtract () {a na karo — useState hook ki itni gehri detail batata hoon ke samajh ke dil garden ga
+// function subtract () {
 //   if (count > 0) {
-  
+//   
 //   setcount(count - 1)
 //   }
 //   else{
@@ -40,8 +40,10 @@ const App = () => {
   const [loader, setloader] = React.useState(null);
   const [data, setdata] = React.useState(null);
 
-
-
+  setTimeout( async() => {
+    let data = await fetch('https://fakestoreapi.com/products')
+    data = await data.json()
+  }, 5000);
 
   return (
     <div>
@@ -57,15 +59,6 @@ export
 const [count, setCount] = React.useState([])
 
 
-const useeffe = React.useEffect(() => {
-  
-
-  const [name, setName] = useState("Ali"); // ✅ primitive
-
-  const [user, setUser] = useState({ name: "Ali", age: 22 }); // ✅ object  return () => {
-    
-  }
-}, [])
 
 
 
