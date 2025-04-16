@@ -32,41 +32,7 @@
 // export default App
 
 
-
-
-import React from 'react'
-
-const App = () => {
-  const [loader, setloader] = React.useState(null);
-  const [data, setdata] = React.useState(null);
-
-  setTimeout( async() => {
-    let data = await fetch('https://fakestoreapi.com/products')
-    data = await data.json()
-  }, 5000);
-
-  return (
-    <div>
-
-
-    </div>
-  )
-}
-
-export 
-
-
-const [count, setCount] = React.useState([])
-
-
-
-
-
-
-// YE 
-//
-const [count, setCount] = React.useState([]); 
-//  APPROACH FUNCTION KA KEY WORD BNA KAR HAI
+// YE APPROACH FUNCTION KA KEY WORD BNA KAR HAI
 
 // function App() {
 //   return (
@@ -92,3 +58,30 @@ const [count, setCount] = React.useState([]);
 // export default App;
 
 // DONO KAI RESULTS SAME HAI 
+
+import React from 'react'
+import { RouterProvider , createBrowserRouter } from 'react-router-dom'
+import Home from "./Pages/HOME/Home.jsx"
+import About from "./Pages/ABOUT/About.jsx"
+import Services from "./Pages/SERVICES/Service.jsx"
+
+
+const App = () => {
+  const routing = createBrowserRouter([
+    {
+      path:"/",
+      element:<Home />
+    },
+    {
+      path:"/about",
+      element:<About />
+    },
+    {
+      path:"/services",
+      element:<Services />
+    }
+  ])
+  return <RouterProvider router={routing} />
+}
+
+export default App
