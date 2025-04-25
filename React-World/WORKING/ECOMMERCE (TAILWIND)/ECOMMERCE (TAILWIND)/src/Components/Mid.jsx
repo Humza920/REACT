@@ -111,11 +111,11 @@ function MidSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-amber-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute top-4 right-4 bg-white text-amber-500 text-xs font-semibold px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Caring
+                LOVE
               </div>
             </div>
             <div className="p-5 sm:p-6 text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Adoption Services</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Many More Pets</h3>
               <p className="text-white text-sm sm:text-base mb-4 leading-relaxed">
                 Find your forever friend with our supportive process.
               </p>
@@ -123,7 +123,7 @@ function MidSection() {
                 href="#"
                 className="inline-block px-5 py-2 bg-white text-amber-500 text-sm font-semibold rounded-full transition-all duration-300 hover:bg-gray-100 hover:shadow-md"
               >
-                Learn More
+                See All
               </a>
             </div>
           </div>

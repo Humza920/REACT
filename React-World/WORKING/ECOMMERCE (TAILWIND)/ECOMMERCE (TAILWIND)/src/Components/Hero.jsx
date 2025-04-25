@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRibbon } from "@fortawesome/free-solid-svg-icons";
+
 
 function Hero() {
   return (
@@ -32,18 +35,17 @@ function Hero() {
   Contact Us ↓
   </button>
 </div>
-
-    {/* Trust indicators */}
-    <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 text-white/80 text-sm sm:text-base">
-      {["Healthy Pets", "Certified Breeders", "Lifetime Support", "Affordable Prices"].map((text, idx) => (
-        <div key={idx} className="flex items-center justify-center gap-2 border border-white/10 bg-white/5 backdrop-blur-sm py-2 px-4 rounded-lg hover:border-white/30 hover:bg-white/10 transition duration-200">
-          <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-          </svg>
-          <span>{text}</span>
-        </div>
-      ))}
-    </div>
+{/* Trust indicators */}
+<div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 text-white/90">
+            {["Healthy Pets", "Certified Breeders", "Lifetime Support", "Affordable Prices"].map((text, idx) => (
+              <div key={idx} className="flex items-center justify-center gap-3 border border-white/20 bg-white/5 backdrop-blur-sm py-4 px-6 rounded-xl hover:border-white/40 hover:bg-white/10 transition-all duration-300 group">
+                <span className="text-amber-400 group-hover:text-amber-300 transition-colors duration-300">
+                  <FontAwesomeIcon icon={faRibbon} className="w-5 h-5" />
+                </span>
+                <span className="font-medium group-hover:text-white transition-colors duration-300">{text}</span>
+              </div>
+            ))}
+          </div>
   </div>
 </div>
 
