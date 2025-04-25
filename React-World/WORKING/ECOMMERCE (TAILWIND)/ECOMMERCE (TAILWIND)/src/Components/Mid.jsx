@@ -1,102 +1,149 @@
 import React from 'react';
 
-function Mid() {
+function MidSection() {
   return (
-    <div className="bg-gradient-to-b from-amber-600 to-amber-500 py-20 text-center relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNGM2LjYyNyAwIDEyLTUuMzczIDEyLTEyUzQyLjYyNyAxMCAzNiAxMGMtNi42MjggMC0xMiA1LjM3My0xMiAxMnM1LjM3MiAxMiAxMiAxMnptMCAyYy03LjczMiAwLTE0LTYuMjY4LTE0LTE0czYuMjY4LTE0IDE0LTE0IDE0IDYuMjY4IDE0IDE0LTYuMjY4IDE0LTE0IDE0eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]"></div>
-      </div>
+    <div className="bg-gradient-to-b from-amber-100 to-gray-50 py-16 md:py-24 relative overflow-hidden">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTggMThhMiAyIDAgMTAwIDQgMiAyIDAgMDAwLTQiIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==')]"></div>
 
-      {/* Content */}
-      <div className="relative z-10">
+      {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Section */}
-        <div className="flex flex-col items-center space-y-4">
-          <p className="text-3xl sm:text-4xl font-bold text-white tracking-wide">
-            We Specialize In Our Passion
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight">
+            Meet Your New Best Friend
+          </h2>
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            From playful pups to cuddly kittens, find the perfect pet to fill your home with love.
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-black max-w-3xl px-4">
-            Caring for Pets & Sheltering
-          </h1>
         </div>
 
-        {/* Cards Section */}
-        <div className="mt-16 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 px-6 max-w-7xl mx-auto">
-          {/* Card 1 */}
-          <div className="group bg-white/90 backdrop-blur-sm text-center p-8 rounded-2xl shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:bg-white">
-            <div className="overflow-hidden rounded-xl mb-6">
+        {/* Featured Pets/Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {/* Card 1: Puppy */}
+          <div className="group bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl relative">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
               <img
-                src="./src/assets/parrot.webp"
-                alt="Scarlet Macaw"
-                className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+                alt="Cute Puppy"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 bg-amber-400 text-white text-xs font-semibold px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                New Arrivals
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-amber-600 mb-4">Scarlet Macaw</h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
-              Id volutpat lacus laoreet non curabitur. Diam phasellus vestibulum lorem sed.
-            </p>
-            <button className="group relative px-8 py-3 bg-amber-500 text-white rounded-full text-lg font-semibold transition-all duration-300 hover:bg-amber-600 hover:scale-105 hover:shadow-lg">
-              <span className="relative z-10 flex items-center gap-2">
-                Shop Now
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            </button>
+            <div className="p-5 sm:p-6 text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-amber-600 mb-2">Playful Puppies</h3>
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
+                Loyal and energetic friends ready for adventure.
+              </p>
+              <a
+                href="#"
+                className="inline-block px-5 py-2 bg-amber-500 text-white text-sm font-semibold rounded-full transition-all duration-300 hover:bg-amber-600 hover:shadow-md"
+              >
+                Meet Them
+              </a>
+            </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="group bg-white/90 backdrop-blur-sm text-center p-8 rounded-2xl shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:bg-white">
-            <div className="overflow-hidden rounded-xl mb-6">
+          {/* Card 2: Kitten */}
+          <div className="group bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl relative">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
               <img
-                src="./src/assets/dog.webp"
-                alt="Golden Retriever"
-                className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+                alt="Cute Kitten"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 bg-amber-400 text-white text-xs font-semibold px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Fan Favorite
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-amber-600 mb-4">Golden Retriever</h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
-              A friendly and loyal companion for all pet lovers.
-            </p>
-            <button className="group relative px-8 py-3 bg-amber-500 text-white rounded-full text-lg font-semibold transition-all duration-300 hover:bg-amber-600 hover:scale-105 hover:shadow-lg">
-              <span className="relative z-10 flex items-center gap-2">
-                Shop Now
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            </button>
+            <div className="p-5 sm:p-6 text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-amber-600 mb-2">Charming Kittens</h3>
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
+                Cuddly companions for cozy moments at home.
+              </p>
+              <a
+                href="#"
+                className="inline-block px-5 py-2 bg-amber-500 text-white text-sm font-semibold rounded-full transition-all duration-300 hover:bg-amber-600 hover:shadow-md"
+              >
+                Meet Them
+              </a>
+            </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="group bg-white/90 backdrop-blur-sm text-center p-8 rounded-2xl shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:bg-white">
-            <div className="overflow-hidden rounded-xl mb-6">
+          {/* Card 3: Bird */}
+          <div className="group bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl relative">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
               <img
-                src="./src/assets/cat.webp"
-                alt="Persian Cat"
-                className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+                alt="Colorful Bird"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 bg-amber-400 text-white text-xs font-semibold px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Exotic
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-amber-600 mb-4">Persian Cat</h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-6">
-              Elegant and beautiful, Persian cats are a favorite choice.
-            </p>
-            <button className="group relative px-8 py-3 bg-amber-500 text-white rounded-full text-lg font-semibold transition-all duration-300 hover:bg-amber-600 hover:scale-105 hover:shadow-lg">
-              <span className="relative z-10 flex items-center gap-2">
-                Shop Now
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-              <span className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            </button>
+            <div className="p-5 sm:p-6 text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-amber-600 mb-2">Vibrant Birds</h3>
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
+                Cheerful singers to liven up your space.
+              </p>
+              <a
+                href="#"
+                className="inline-block px-5 py-2 bg-amber-500 text-white text-sm font-semibold rounded-full transition-all duration-300 hover:bg-amber-600 hover:shadow-md"
+              >
+                Meet Them
+              </a>
+            </div>
           </div>
+
+          {/* Card 4: Adoption Services */}
+          <div className="group bg-amber-500 rounded-3xl shadow-md overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl relative">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1560743641-3914f2c45636?q=80&w=600&auto=format&fit=crop"
+                alt="Adoption Services"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 bg-white text-amber-500 text-xs font-semibold px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Caring
+              </div>
+            </div>
+            <div className="p-5 sm:p-6 text-center">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Adoption Services</h3>
+              <p className="text-white text-sm sm:text-base mb-4 leading-relaxed">
+                Find your forever friend with our supportive process.
+              </p>
+              <a
+                href="#"
+                className="inline-block px-5 py-2 bg-white text-amber-500 text-sm font-semibold rounded-full transition-all duration-300 hover:bg-gray-100 hover:shadow-md"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary CTA Section */}
+        <div className="text-center mt-12 md:mt-16">
+          <p className="text-base sm:text-lg text-gray-600 mb-4">
+            Ready to bring home a new companion?
+          </p>
+          <a
+            href="#"
+            className="inline-block px-8 py-3.5 bg-amber-600 text-white text-base sm:text-lg font-semibold rounded-full shadow-lg transition-all duration-300 hover:bg-amber-700 hover:shadow-xl"
+          >
+            Explore All Pets
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
-export default Mid;
+export default MidSection;

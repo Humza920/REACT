@@ -46,7 +46,7 @@ function Navbar() {
     </div>
 
     {/* Main Navigation */}
-    <nav className="bg-gradient-to-r from-[#F1A208] via-[#FFA500] to-[#E48A07] text-white shadow-xl sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-[#E48A07] via-[#E48A07] to-[#FFA500] text-white shadow-xl sticky top-0 z-50">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex flex-col sm:flex-row justify-between items-center">
         {/* Logo */}
         <div className="flex items-center justify-between w-full sm:w-auto">
