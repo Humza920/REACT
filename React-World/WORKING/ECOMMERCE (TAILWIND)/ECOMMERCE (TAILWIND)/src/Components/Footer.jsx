@@ -58,9 +58,6 @@ function Footer() {
                 <a href="#" className="text-gray-400 hover:text-[#E48A07] transition-colors text-sm">Our Pets</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-[#E48A07] transition-colors text-sm">Services</a>
-              </li>
-              <li>
                 <a href="#" className="text-gray-400 hover:text-[#E48A07] transition-colors text-sm">Contact</a>
               </li>
             </ul>
