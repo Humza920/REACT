@@ -1,18 +1,20 @@
 import React from "react";
 import { useState } from "react";
 
+let count = 0;
 const Containercontent = () => {
   const [goals, setgoals] = useState([]);
   const [inputValue, setInputValue] = useState("");
-
   function handleInputChange(event) {
     setInputValue(event.target.value);
     console.log(event.target.value);
   }
 
   function addGoals() {
-    setgoals([...goals, inputValue]);
+    // setgoals([...goals, inputValue]);
+    setgoals([...goals , {goal: inputValue,id: count}]);
     setInputValue("");
+    count++;
   }
 
   return (
@@ -53,25 +55,38 @@ const Containercontent = () => {
                   }}
                   key={index}
                 >
-                  <li key={index}>{goal}</li>
+                  <li key={goal.id}>{goal.goal}</li>
                   <button
-                    onClick={(index) => {
-                      const afterdeletegoal = goals.filter((goal, i) => {
+                    id={index}
+                    onClick={(e) => {
+                      const afterdeletegoal = goals.filter((x , i) => {
                         console.log(i);
-                        console.log(index);
-                        
-                        
                         console.log(index !== i);
-                        
+
                         return index !== i;
                       });
                       console.log(afterdeletegoal);
-                      
+
                       return setgoals(afterdeletegoal);
                     }}
                   >
                     DELETE-ME
                   </button>
+
+                  <button type="button" onClick={()=>{
+                    console.log(goal.id);
+                    if (true) {
+                      for (const update of goals) {
+                        if (update.id === goal.id) {
+                          console.log(update.id);
+                          update.goal = prompt("Update your goal", update.goal);
+                          setgoals([...goals]);
+                          break;
+                        }
+                      }
+                      
+                    }
+                  }}>CHANGE ME</button>
                 </div>
               );
             })}
