@@ -1,6 +1,7 @@
 import React from 'react'
-import Containercontent from './Components/Containercontent'
-import './App.css'
+import Containercontent from './PAGES/Containercontent'
+
+
 const App = () => {
   return (
     <>
